@@ -1,0 +1,93 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="jquery.js"></script>
+    <script src="rem.js"></script>
+    <script src="vue.js"></script>
+</head>
+<body>
+<section id="app">
+    <section class="left-container border main left">
+        <section class="header">
+            <h3 class="yellow">当日挂号已满专家/科室</h3>
+
+        </section>
+        <section class="up border-bottom">
+            <section class="title">
+                <span>专家</span>
+            </section>
+            <section class="scroll expert">
+                <ul ref="leftUpScroll">
+                   <li v-for="item in leftUpData">
+                       <p>{{item.ks}}</p>
+                       <p>
+                           {{item.ys}}
+                           <i>（已满）</i>
+                       </p>
+                   </li>
+                </ul>
+            </section>
+        </section>
+        <section class="down border-top border-bottom">
+            <section class="title">
+                <span>科室</span>
+            </section>
+            <section class="scroll dep">
+                <ul ref="leftDownScroll">
+                    <li v-for="item in leftDownData">
+                        <p>{{item.ks}}</p>
+                        <p>
+                            {{item.ys}}
+                            <i>（已满）</i>
+                        </p>
+                    </li>
+                </ul>
+            </section>
+        </section>
+    </section>
+    <section class="right-container border main right">
+        <section class="header">
+            <h3 class="red">当日停诊专家</h3>
+        </section>
+        <section class="up border-bottom fix">
+            <section class="title">
+                <span>上午</span>
+            </section>
+            <section class="scroll">
+                <ul ref="rightUpScroll">
+                    <li v-for="item in rightUpData">
+                        <p>{{item.ks}}</p>
+                        <p>
+                            {{item.ys}}
+                        </p>
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <section class="down border-top border-bottom fix">
+            <section class="title">
+                <span>下午</span>
+            </section>
+            <section class="scroll">
+                <ul ref="rightDownScroll">
+                    <li v-for="item in rightDownData">
+                        <p>{{item.ks}}</p>
+                        <p>
+                            {{item.ys}}
+                        </p>
+                    </li>
+                </ul>
+            </section>
+        </section>
+    </section>
+</section>
+<script src="js/index.js"></script>
+</body>
+</html>
